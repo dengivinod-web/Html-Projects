@@ -1,31 +1,79 @@
 <html>
 <head>
 	<title>Job application</title>
+<script>
+  function data()
+     {
+	var a=document.getElementById("n1").value;
+	var b=document.getElementById("n2").value;
+	var c=document.getElementById("n3").value;
+	var d=document.getElementById("n4").value;
+	var e=document.getElementById("n5").value;
+	var f=document.getElementById("n6").value;
+	var g=document.getElementById("n7").value;
+	var h=document.getElementById("n8").value;
+	var i=document.getElementById("n9").value;
+
+
+        if(a==""||b==""||c==""||d==""||e==""||f==""||g==""||h==""||i=="")
+	{
+	   alert("Fill the form properly");
+           return false;
+	}
+       	else if(c!=d)
+	{
+	   alert("Enter same password");
+           return false;
+	}
+	else if(e.length>10||e.length<10)
+	{
+	   alert("Number must be 10 digits ! Enter a valid numbers");
+           return false;
+	}
+	else if(isNaN(e))
+	{
+	   alert("Only numbers are allowed ! Enter a valid numbers");
+           return false;
+	}
+
+        else
+	{
+		true;
+	}
+    }
+</script>
 </head>
 <body>
 <h1>JOB APPLICATION SUBMISSION FORM</h1>
-<form>
+<form onsubmit="return data()" action="submission.html">
+
 	<label> Enter your First Name:</label>
-	<input type="text" placeholder="Enter First Name"><br><br>
+	<input type="text" placeholder="Enter First Name" id="n1"><br><br>
 
    	<label>Enter your Last Name:</label>
-	<input type="text" placeholder="Enter last Name"><br><br>
-	
+	<input type="text" placeholder="Enter last Name" id="n2"><br><br>
+
+	<label>Enter your password:</label>
+	<input type="password" id="n3"><br><br>
+
+	<label>Confirm your password:</label>
+	<input type="password" id="n4"><br><br>
+
 	<label>Enter your phone number:</label>
-	<input type="tel" placeholder="Enter youe phone number"><br><br>
+	<input type="tel" placeholder="Enter youe phone number" id="n5"><br><br>
 
 	<label>Enter your Email:</label>
-	<input type="email" placeholder="Enter youe email"><br><br>
+	<input type="email" placeholder="Enter youe email" id="n6"><br><br>
 
 	<label>Enter your DOB:</label>
-	<input type="date"  placeholder="Enter youe DOB"><br><br>
+	<input type="date"  placeholder="Enter youe DOB" id="n7"><br><br>
 
        	<label>Enter your Gender:</label>
 	<input type="radio" name="gender">Male
 	<input type="radio" name="gender">Female<br><br>
 
 	<label>Enter your Job Role:</label>
-	<input type="text" placeholder="Enter Job Role"><br><br>
+	<input type="text" placeholder="Enter Job Role" id="n8"><br><br>
 
 	<label>Enter your skill:</label>
 	<input type="text" placeholder="Enter your skill"><br><br>
@@ -46,9 +94,10 @@
 	</select><br><br>
 
 	<label>Upload your Resume:</label>
-	<input type="file"><br><br><br>
+	<input type="file" id="n9"><br><br><br>
 	
-	<input type="submit" value="submit"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+	<input type="submit" value="Submit your data"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
 	<input type="reset" value="Reset">
+</form>
 </body>
 </html>
